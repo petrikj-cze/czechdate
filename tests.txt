@@ -1,0 +1,23 @@
+
+
+//
+// BEZ ZADANÉHO ČASU A DATUMU - FUNKCE VYCHÁZÍ Z AKTUÁLNÍHO ČASU
+//
+
+console.log("Dnes je " + czechDate()) //defaultní výpis [Dnes je 11. srpna 2026]
+
+console.log("Dnes je " + czechDate("nominativ")) //defaultní výpis [Dnes je 11. srpna 2026]
+
+console.log("Dnes je měsíc " + czechDate("nominativ", "M")) //pouze měsíc v nominativu [Dnes je měsíc srpen]
+
+console.log("Příští kontrola bude v " + czechDate("locativ", "M")) //pouze měsíc v locativu [Příští kontrola bude v srpnu]
+
+//
+// S UŽIVATELSKY NASTAVENÝM DATUMEM VE FORMÁTU DD.MM.YYYY nebo D.M.YYYY nebo DD.M.YYYY nebo D.MM.YYYY
+// datum funguje jak s mezerami, tak bez nich. Stačí dodržet posloupnout den-měsíc-rok
+// datum pak může být 1.12.2026 nebo 1. 12. 2026
+//
+
+console.log("Příští kontrola bude v " + czechDate("locativ", "MY", "1.1.2029")) //pouze měsíc a rok v locativu [Příští kontrola bude v lednu 2029]
+
+console.log("Musíš to odevzdat do konce " + czechDate("genitiv", "M", "1.1.2029")) //pouze měsíc v genitivu [Musíš to odevzdat do konce ledna]

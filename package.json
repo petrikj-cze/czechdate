@@ -1,0 +1,19 @@
+{
+  "name": "czechdate",
+  "version": "1.0.0",
+  "description": "A package for formatting dates in Czech, with a focus on grammatical declension of month names",
+  "keywords": [
+    "date",
+    "time",
+    "formating",
+    "czech",
+    "javascript"
+  ],
+  "license": "MIT",
+  "author": "Jaroslav Petřík",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
