@@ -3,7 +3,10 @@ export function czechDate(
     format = "DMY",
     datetime = new Date().toLocaleDateString()
 ) {
-    var formated = "";
+    let formated;
+    let day;
+    let month;
+    let year;
 
     const months = {
         nominativ: [
@@ -52,13 +55,21 @@ export function czechDate(
         ],
     };
 
+    if(datetime.includes(".")){
+        const dateParts = datetime.split(".")
 
+        day = dateParts[0].trim()
+        month = dateParts[1].trim()
+        year = dateParts[2].trim()
+    }else if(datetime.includes("-")){
+        const dateParts = datetime.split("-")
 
-    const parts = datetime.split(".");
+        year = dateParts[0].trim()
+        month = dateParts[1].trim()
+        day = dateParts[2].trim()
+    }
 
-    const day = parts[0].trim()
-    const month = parts[1].trim()
-    const year = parts[2].trim()
+    
 
     if (gramatical == "genitiv") {
         if (format == "D") {
@@ -85,11 +96,11 @@ export function czechDate(
         } else if (format == "DM") {
             formated = day + ". " + months.nominativ[month - 1]
         } else if (format == "MY") {
-            formated = months.genitiv[month - 1] + " " + year
+            formated = months.nominativ[month - 1] + " " + year
         } else if (format == "DMY") {
             formated = day + ". " + months.nominativ[month - 1] + " " + year
         }
-    } else if (gramatical == "locativ") {
+    } else if (gramatical == "lokativ") {
         if (format == "D") {
             formated = day + ". "
         } else if (format == "M") {
