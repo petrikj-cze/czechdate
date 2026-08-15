@@ -1,7 +1,7 @@
 export function czechDate(
-    datetime = new Date().toLocaleDateString(),
     gramatical = "genitiv",
-    format = "DMY"
+    format = "DMY",
+    datetime = new Date().toLocaleDateString()
 ) {
     let formated;
     let day;
