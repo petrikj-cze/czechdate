@@ -1,7 +1,7 @@
 export function czechDate(
+    datetime = new Date().toLocaleDateString(),
     gramatical = "genitiv",
-    format = "DMY",
-    datetime = new Date().toLocaleDateString()
+    format = "DMY"
 ) {
     let formated;
     let day;
@@ -55,13 +55,13 @@ export function czechDate(
         ],
     };
 
-    if(datetime.includes(".")){
+    if (datetime.includes(".")) {
         const dateParts = datetime.split(".")
 
         day = dateParts[0].trim()
         month = dateParts[1].trim()
         year = dateParts[2].trim()
-    }else if(datetime.includes("-")){
+    } else if (datetime.includes("-")) {
         const dateParts = datetime.split("-")
 
         year = dateParts[0].trim()
@@ -69,7 +69,7 @@ export function czechDate(
         day = dateParts[2].trim()
     }
 
-    
+
 
     if (gramatical == "genitiv") {
         if (format == "D") {
